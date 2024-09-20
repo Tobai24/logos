@@ -2,6 +2,8 @@
 
 Welcome to **Logos**! ✨ Your personal, AI-powered Bible study assistant designed to help you dig deep into scripture with accuracy and clarity. Whether you’re asking about a specific Bible verse or seeking advice on life’s situations, **Logos** provides answers grounded in the Word of God, complete with scriptural references. 🙏✨
 
+![logos image](image/logos.png)
+
 ## 💡 **Why Use Logos?**
 
 **Logos** makes it easy for you to ask questions about the Bible 📖 or seek guidance on specific situations 🧐, and it responds with answers straight from the scriptures. Say goodbye to misinterpretations! **Logos** ensures that all answers are based on what the Bible says, helping you grow in your faith and deepen your relationship with God. ❤️
