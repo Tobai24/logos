@@ -1,6 +1,6 @@
 # 📚 **Logos: Your Ultimate Bible Study Assistant**
 
-Welcome to **Logos**! ✨ Your personal, AI-powered Bible study assistant designed to help you dig deep into scripture with accuracy and clarity. Whether you’re asking about a specific Bible verse or seeking advice on life’s situations, **Logos** provides answers grounded in the Word of God, complete with scriptural references. 🙏✨
+Welcome to **Logos**! ✨ Your personal, AI-powered Bible study assistant designed to help you dig deep into scripture with accuracy and clarity. Whether you’re asking about a specific Bible verse or seeking advice on life’s situations, **Logos** provides answers grounded in the Word of God, complete with scriptural references and **contextual explanations**. 🙏✨
 
 ![logos image](image/logos.png)
 
@@ -8,11 +8,13 @@ Welcome to **Logos**! ✨ Your personal, AI-powered Bible study assistant design
 
 **Logos** makes it easy for you to ask questions about the Bible 📖 or seek guidance on specific situations 🧐, and it responds with answers straight from the scriptures. Say goodbye to misinterpretations! **Logos** ensures that all answers are based on what the Bible says, helping you grow in your faith and deepen your relationship with God. ❤️
 
+Plus, **Logos** provides a **contextual breakdown** of each chapter and verse, offering a full understanding of the meaning behind the scriptures and how they apply to daily life.
+
 ## 🔥 **Key Features**
 
 - 🗣 **Ask Anything:** Got a Bible question or need advice? **Logos** has you covered with answers directly from scripture.
 - 📜 **Scriptural Backing:** Every response comes with relevant Bible verses, so you can trust that your answers are rooted in the Word.
-- 🔍 **Contextual Clarity:** **Logos** ensures you receive thoughtful, well-explained answers that avoid misinformation or misinterpretation.
+- 🔍 **Contextual Clarity:** **Logos** goes beyond simple answers by providing **contextual meaning** of each chapter and verse, giving you a deeper understanding.
 - 📱 **Easy Access Anywhere:** Use **Logos** as a **Telegram bot** for instant answers, or enjoy a seamless experience on the web app.
 
 ## 🛠 **Tech Stack**
@@ -26,7 +28,7 @@ Welcome to **Logos**! ✨ Your personal, AI-powered Bible study assistant design
 ### 📱 **On Telegram:**
 
 1. Open Telegram and search for **Logos Bible Bot**.
-2. Ask any Bible-related question or seek advice, and **Logos** will respond with Bible-based answers and scriptural backing.
+2. Ask any Bible-related question or seek advice, and **Logos** will respond with Bible-based answers, contextual meanings, and scriptural backing.
 
 ### 💻 **On the Web:**
 

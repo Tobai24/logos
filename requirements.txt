@@ -1,0 +1,12 @@
+openai
+scikit-learn
+pandas
+streamlit
+jupyter
+tqdm
+elasticsearch
+ipywidgets
+youtube-transcript-api
+pytube
+nltk
+requests  
