@@ -57,7 +57,8 @@ The `transcript.py` script is used to fetch metadata and transcripts of all vide
 
    - **Access the Google Cloud Console**:
 
-     - Go to the [Google Cloud Console](https://console.cloud.google.com/).
+     - Sign up at [Google Cloud](https://console.cloud.google.com/)
+     - Go to the [Google Cloud Console](https://console.cloud.google.com/)
 
    - **Create or Select a Project**:
 

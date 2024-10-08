@@ -1,34 +1,46 @@
-# 📚 **Logos: Your Ultimate Bible Study Assistant**
+📖 **Logos: Your Ultimate Bible Study Companion**
 
-**Logos** is an AI-powered assistant designed to help users study the Bible by answering questions with responses grounded in scripture, enriched with contextual insights and teachings from **The Bible Project** YouTube channel. This tool leverages advanced retrieval and generation techniques to provide meaningful, Bible-based responses to any question you ask.
+Hey there! 👋 Welcome to **Logos**, your go-to AI-powered Bible study assistant. Whether you're diving into scripture for the first time or looking for deeper insights, Logos has your back. This tool brings together the power of AI and **The Bible Project** YouTube channel to give you rich, scripture-based responses to any question you have. It's all about helping you explore the Bible with context, meaning, and purpose. ✨
 
 ## 📝 **Problem Description**
 
-📖 Understanding the Bible can often be challenging, especially when seeking clear answers to complex spiritual questions or interpreting scriptural context for everyday situations. Misinterpretation of verses and lack of contextual understanding can hinder spiritual growth and proper application of biblical teachings.
+📖 To really understand scripture and discover its deeper meanings, it's important to have the guidance of the Holy Spirit. Sometimes, we might misinterpret verses or overlook their context, and that can slow down our spiritual growth and make it tougher to apply biblical teachings in our daily lives.
 
 ### 🎯 **Objective**
 
-The objective of this project is to develop an AI-powered Bible study assistant, **Logos** ✨, that provides clear, scripturally-based answers to users' questions. **Logos** not only retrieves Bible verses but also offers contextual insights and practical applications 🙏. It serves as a reliable tool for anyone looking to deepen their understanding of the Bible while ensuring accurate interpretation and direct reference to scripture 📜.
+The goal of this project is to build an AI-powered Bible study assistant, **Logos** ✨, that gives you clear, scripture-based answers to your questions. **Logos** doesn't just pull Bible verses—it also provides context and practical insights 🙏, making it a powerful tool for anyone who wants to dive deeper into the Bible and understand it better. You'll get accurate interpretations, grounded in the Word 📜.
 
----
+## 🌟 **Key Features**
+
+- **Answer Bible Questions**: **Logos** provides clear, scripture-based answers to any Bible-related inquiry 📖, complete with direct references to relevant verses for accuracy.
+
+- **Contextual Explanation**: For each referenced verse, **Logos** offers deeper insights 🔍, explaining its significance within the broader biblical narrative, including theological, historical, and cultural context.
+
+- **Real-Life Application**: **Logos** helps users apply biblical teachings to daily life 🌍, offering practical advice rooted in scripture for situations like forgiveness, patience, and overcoming fear.
+
+- **Friendly Guidance**: If a direct answer isn't available, **Logos** suggests related Bible passages 📜 and provides friendly guidance to encourage further exploration.
+
+- **Telegram Bot**: Access **Logos** via the **Telegram bot** for quick and insightful answers to Bible-related questions anytime, anywhere.
 
 ## 📊 **Data Source**
 
-The data used in this project consists of Bible verses from the **King James Version (KJV)** stored as a JSON file and YouTube transcripts from **The Bible Project** 🎥, an educational YouTube channel known for its engaging videos that explain Biblical stories and themes. The transcript data is stored in the `data/` folder for use in this project.
+For this project, we’re working with two main data sources: Bible verses from the **King James Version (KJV)** in JSON format, and transcripts from **The Bible Project** 🎥, a YouTube channel that explains Biblical stories and themes in a fun, engaging way. You’ll find the transcript data stored in the `data/` folder, ready to be used.
 
-- 📚 **Number of records**: All Bible verses
-- 🎥 **YouTube transcripts**: Videos from [The Bible Project](https://www.youtube.com/@bibleproject)
+- 📚 **Number of records**: Every Bible verse from the KJV
+- 🎥 **YouTube transcripts**: From videos by [The Bible Project](https://www.youtube.com/@bibleproject)
 
-For more detailed information about how to get the video transcripts, including instructions on how to convert them to a JSON file, please refer to the `data/README.md` 📂.
+If you need help getting the video transcripts or converting them into JSON format, check out the `data/README.md` 📂 for step-by-step instructions.
 
-## Key Features
+## 🛠️ **Technologies**
 
-- **Ask Questions**: Users can ask any Bible-related question, and **Logos** will provide scripturally supported answers.
-- **Scripture-Based Answers**: Each response is based on Bible verses, ensuring biblical accuracy and integrity.
-- **Contextual Insights**: **Logos** explains the deeper meaning behind passages, incorporating related video teachings from **The Bible Project**.
-- **Telegram Bot**: Access **Logos** on-the-go via the **Telegram bot** for quick responses to Bible questions.
-
----
+- **Python 3.12**: Core programming language for developing the application.
+- **Docker & Docker Compose**: Used for containerization and easy deployment.
+- **Minsearch**: For efficient text search during development and practice.
+- **Elasticsearch**: Used for full-scale search and retrieval in the production environment.
+- **Streamlit**: Acts as the user interface.
+- **Grafana**: Used for monitoring, with **PostgreSQL** as the backend database.
+- **OpenAI**: Integrated for advanced language model (LLM) capabilities.
+- **Google Cloud Account**: To access the YouTube Data API to get the video transcript. (not necessary the the data folder already has all the video transcript)
 
 ## Table of Contents
 
@@ -42,21 +54,7 @@ For more detailed information about how to get the video transcripts, including 
 - [API Integration](#api-integration)
 - [Contact Information](#contact-information)
 
----
-
 ## Installation
-
-### Requirements
-
-- **Python 3.8+**
-- **Streamlit** for the web interface.
-- **OpenAI API Key** for generating answers using GPT-4.
-- **YouTube Data API Key** for fetching video transcripts from **The Bible Project**.
-- **Elasticsearch** for retrieving Bible verses and video data.
-
-Here's the revised setup section for your README, focusing only on using `venv`:
-
----
 
 ## ✨ Setup
 
@@ -65,8 +63,8 @@ Here's the revised setup section for your README, focusing only on using `venv`:
 **Clone the Repository:**
 
 ```bash
-git clone https://github.com/your-username/logos-bible-assistant.git
-cd logos-bible-assistant
+git clone https://github.com/Tobai24/logos.git
+cd logos
 ```
 
 **Set Up the Python Environment:**
@@ -75,7 +73,7 @@ cd logos-bible-assistant
 
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   source venv/bin/activate  # For Windows, use: venv\Scripts\activate
    ```
 
 2. **Install the Dependencies:**
@@ -84,22 +82,45 @@ cd logos-bible-assistant
    pip install -r requirements.txt
    ```
 
-### How to Obtain API Keys
+## How to Obtain API Keys
 
 - **OpenAI API Key**:
 
-  1. Sign up at [OpenAI](https://beta.openai.com/signup/).
-  2. Navigate to the API section and generate a new API key.
-  3. Copy the API key and add it to your `.env` file.
+  1.  Sign up at [OpenAI](https://beta.openai.com/signup/).
+  2.  Navigate to the API section and generate a new API key.
+  3.  Copy the key for later use.
 
-- **YouTube Data API Key**:
+## Save the API Key to Make It Private
 
-  1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
-  2. Create a new project and enable the **YouTube Data API v3**.
-  3. Create credentials and generate an API key.
-  4. Copy the API key and add it to your `.env` file.
+1. **Create a `.envrc` File:**  
+   Create a `.envrc` file in your project directory.
 
-### Running the App Locally
+2. **Insert Your API Key:**  
+   Copy `export OPENAI_API_KEY='YOUR_KEY'` to your `.envrc` file and insert your copied API key there.
+
+## Preparation
+
+1. **Install `direnv`:**  
+   If you're on Ubuntu, run:
+
+   ```bash
+   sudo apt install direnv
+   ```
+
+2. **Configure Your Shell:**  
+   Add `direnv` to your shell configuration by running:
+
+   ```bash
+   direnv hook bash >> ~/.bashrc
+   ```
+
+3. **Load the API Key:**  
+   Run `direnv allow` to load the key into your environment.
+
+4. **Best Practices:**  
+   For OpenAI, it's recommended to create a new project and use a separate API key for security.
+
+## Running the App Locally
 
 1. **Run the app**:
 
@@ -108,8 +129,6 @@ cd logos-bible-assistant
    ```
 
 2. Open your browser at `http://localhost:8501` to start interacting with **Logos**.
-
----
 
 ## How to Use
 
@@ -122,8 +141,6 @@ cd logos-bible-assistant
 
 1. Once the Streamlit app is running, enter your question in the text box.
 2. **Logos** will retrieve relevant Bible verses and insights to answer your question.
-
----
 
 ## Project Structure
 
@@ -139,62 +156,13 @@ logos-bible-assistant/
 └── README.md               # Project documentation
 ```
 
----
-
-## How It Works
-
-**Logos** uses a **Retrieval-Augmented Generation (RAG)** approach to provide insightful answers to Bible questions. It works in the following steps:
-
-1. **Retrieval**: When a user asks a question, **Logos** retrieves relevant Bible passages from an Elasticsearch database and relevant video transcripts from **The Bible Project**.
-2. **Answer Generation**: Using the **OpenAI GPT-4** model, **Logos** generates a response that combines scripture and insights from the retrieved video transcripts.
-3. **Contextual Explanation**: The answer includes explanations of the Bible passages and their application to real-life situations.
-
----
-
-## Environment Variables
-
-The following environment variables are required:
-
-- `OPENAI_API_KEY`: Your OpenAI API key for generating answers using GPT-4.
-- `YOUTUBE_API_KEY`: Your YouTube Data API key for fetching **The Bible Project** video metadata and transcripts.
-
----
-
-## Prerequisites
-
-- **OpenAI Account**: Sign up at [OpenAI](https://beta.openai.com/signup/) to get an API key.
-- **Google Cloud Account**: Sign up at [Google Cloud](https://console.cloud.google.com/) and create a project to access the YouTube Data API.
-- **Elasticsearch**: Required for efficient retrieval of Bible passages and video transcripts.
-
----
-
-## Results
-
-### Example Query
-
-**Question**: _"What does the Bible say about forgiveness?"_
-
-**Response**:
-
-```
-"Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you." - Ephesians 4:32
-
-Forgiveness is a central theme in the Bible, often tied to the mercy that God shows His people. The Bible teaches that forgiving others is not just a recommendation but a command. This is also illustrated in [The Bible Project's video on forgiveness](https://www.youtube.com/watch?v=XYZ), which discusses the theological significance of mercy and redemption in the biblical narrative.
-```
-
----
-
-## API Integration
-
-- **OpenAI GPT-4**: Used to generate answers based on retrieved Bible verses and video transcripts.
-- **YouTube Data API**: Used to fetch video metadata and transcripts from [**The Bible Project**](https://www.youtube.com/c/jointhebibleproject).
-- **Elasticsearch**: For indexing and retrieving Bible passages and video data efficiently.
-
----
-
 ## Contact Information
 
 For any questions or issues, feel free to reach out:
 
-- **Project Lead**: [Your Name](oluwatobiiyanuoluwa24@gmail.com)
-- **GitHub**: [Your GitHub](https://github.com/Tobai24)
+- **Project Lead**: [Tobi](oluwatobiiyanuoluwa24@gmail.com)
+- **GitHub**: [GitHub](https://github.com/Tobai24)
+
+## 🎉 Special Mentions
+
+A huge thank you to [DataTalks.Club](https://datatalks.club) for offering their LLM course for free! 🌟 The insights and skills I gained from their course were crucial in developing this project. If you want to enhance your expertise in building RAG application, I highly recommend checking out their [course](https://github.com/DataTalksClub/llm-zoomcamp). It’s an invaluable resource for diving into building LLM applications! 📚✨
