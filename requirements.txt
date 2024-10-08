@@ -13,4 +13,7 @@ requests
 google-api-python-client
 python-telegram-bot
 sentence_transformers==2.7.0
+langchain 
+langchain-elasticsearch
+
 

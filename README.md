@@ -1,4 +1,4 @@
-📖 **Logos: Your Ultimate Bible Study Companion**
+# 📖 **Logos: Your Ultimate Bible Study Companion**
 
 Hey there! 👋 Welcome to **Logos**, your go-to AI-powered Bible study assistant. Whether you're diving into scripture for the first time or looking for deeper insights, Logos has your back. This tool brings together the power of AI and **The Bible Project** YouTube channel to give you rich, scripture-based responses to any question you have. It's all about helping you explore the Bible with context, meaning, and purpose. ✨
 
@@ -155,6 +155,37 @@ logos-bible-assistant/
 ├── .env                    # Environment variables (API keys)
 └── README.md               # Project documentation
 ```
+
+## 🤝 Contributing
+
+**Logos** is an open-source project, and we welcome contributions from everyone! Whether you're fixing bugs, adding new features, or improving documentation, your help is appreciated.
+
+### How to Contribute
+
+1. **Fork the Repository**: Click the "Fork" button at the top right of this page to create a copy of the repository in your own GitHub account.
+2. **Clone Your Fork**: Clone the forked repository to your local machine:
+   ```bash
+   git clone https://github.com/your-username/logos.git
+   cd logos
+   ```
+3. **Create a New Branch**: Create a new branch for your feature or fix:
+   ```bash
+   git checkout -b feature-or-fix-name
+   ```
+4. **Make Your Changes**: Implement your changes and add any necessary tests.
+5. **Commit Your Changes**: Commit your changes with a clear message describing what you’ve done:
+   ```bash
+   git commit -m "Brief description of your changes"
+   ```
+6. **Push to Your Fork**: Push your changes back to your forked repository:
+   ```bash
+   git push origin feature-or-fix-name
+   ```
+7. **Open a Pull Request**: Navigate to the original repository and click on "Pull Requests." Click the "New Pull Request" button, select your branch, and follow the instructions to create a pull request.
+
+For more detailed instructions on contributing, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+Thank you for your interest in contributing to **Logos**! Your contributions help improve the project for everyone. 🙏
 
 ## Contact Information
 
