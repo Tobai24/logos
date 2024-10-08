@@ -9,4 +9,8 @@ ipywidgets
 youtube-transcript-api
 pytube
 nltk
-requests  
+requests 
+google-api-python-client
+python-telegram-bot
+sentence_transformers==2.7.0
+

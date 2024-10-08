@@ -90,7 +90,7 @@ CONTEXT: {context}
 
     return prompt
 
-client = OpenAI(api_key = "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")
+client = OpenAI()
 
 def llm(prompt):
     response = client.chat.completions.create(
