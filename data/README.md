@@ -1,6 +1,4 @@
-# 📂 **Data Folder README**
-
-## 📑 **Overview**
+# 📑 **Overview**
 
 The `data/` folder contains essential components that enable the **Logos** Bible study assistant to function optimally:
 
@@ -8,15 +6,13 @@ The `data/` folder contains essential components that enable the **Logos** Bible
 2. **`video_data.json`**: Stores metadata and transcript chunks from **The Bible Project's** YouTube videos, dynamically generated using the `transcript.py` script.
 3. **`transcript.py`**: A Python script that extracts metadata and transcript data from YouTube videos of **The Bible Project** and saves the results in the `video_data.json` file.
 
----
-
 ## 📊 **Dataset Overview**
 
 This section describes the structure and content of the dataset that **Logos** uses to provide answers based on both the Bible and The Bible Project’s YouTube videos.
 
 ### **About the Dataset**
 
-- **Source**: Bible text from the **KJV Bible** and video transcripts from **The Bible Project's YouTube channel**. Visit [The Bible Project on YouTube](https://www.youtube.com/c/jointhebibleproject).
+- **Source**: Bible text from the **KJV Bible** and video transcripts from **The Bible Project's YouTube channel**. Visit [The Bible Project on YouTube](https://www.youtube.com/@bibleproject).
 - **Files**:
   - **KJV JSON**: Contains all Bible verses categorized by books and chapters.
   - **Video Data JSON**: Contains YouTube video metadata and transcripts, segmented into manageable text chunks.
@@ -30,8 +26,6 @@ This section describes the structure and content of the dataset that **Logos** u
 - **`text`**: Transcript text split into chunks.
 - **`start`**: Timestamp indicating where each transcript chunk starts in the video.
 - **`duration`**: Duration of the chunk in seconds.
-
----
 
 ## 🛠️ **How to Generate the YouTube Data (`video_data.json`)**
 
@@ -122,8 +116,6 @@ The `transcript.py` script is used to fetch metadata and transcripts of all vide
 ### 🔑 **How to Extract the Video ID**
 
 The video ID is automatically extracted from the YouTube video URL. For example, if the URL is `https://www.youtube.com/watch?v=dQw4w9WgXcQ`, the video ID is `dQw4w9WgXcQ`.
-
----
 
 ## 📜 **Usage of Data**
 
