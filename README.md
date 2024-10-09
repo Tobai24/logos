@@ -46,17 +46,14 @@ If you need help getting the video transcripts or converting them into JSON form
 - **OpenAI**: Integrated for advanced language model (LLM) capabilities.
 - **Google Cloud Account**: To access the YouTube Data API to get the video transcript. (not necessary the the data folder already has all the video transcript)
 
-## Table of Contents
+## 🎉 Streamlit App
 
-- [Installation](#installation)
-- [How to Use](#how-to-use)
-- [Project Structure](#project-structure)
-- [How It Works](#how-it-works)
-- [Environment Variables](#environment-variables)
-- [Prerequisites](#prerequisites)
-- [Results](#results)
-- [API Integration](#api-integration)
-- [Contact Information](#contact-information)
+### 📸 Screenshot of the App
+
+![Streamlit App Screenshot](image/app_intro.png)
+
+**App**
+![Streamlit App Screenshot](image/app_conv.png)
 
 ## Installation
 
