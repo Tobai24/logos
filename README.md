@@ -121,6 +121,35 @@ cd logos
 4. **Best Practices:**  
    For OpenAI, it's recommended to create a new project and use a separate API key for security.
 
+### Running Elasticsearch
+
+To run Elasticsearch using Docker, use the following command:
+
+```bash
+docker run -it \
+    --rm \
+    --name elasticsearch \
+    -m 4GB \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+```
+
+If you encounter an error with the previous command (e.g., "error pulling image configuration"), try running Elasticsearch directly from Docker Hub:
+
+```bash
+docker run -it \
+    --rm \
+    --name elasticsearch \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    elasticsearch:8.4.3
+```
+
 ## Get Going
 
 Ready to dive into your project? Here’s a quick guide to get you started. Each step is broken down into folders, so you’ll find all the info you need right where you need it.
