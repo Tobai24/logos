@@ -2,6 +2,7 @@ import streamlit as st
 from elasticsearch import Elasticsearch
 from sentence_transformers import SentenceTransformer
 import openai
+from openai import OpenAI
 
 # Initialize the Elasticsearch client and the embedding model
 es_client = Elasticsearch("http://localhost:9200")
@@ -68,7 +69,7 @@ def build_prompt(query, search_results):
     return prompt
 
 # Function to generate a response from the LLM
-client = openai.OpenAI()
+client = OpenAI()
 def llm(prompt):
     response = client.chat.completions.create(
         model='gpt-4o-mini',
@@ -163,6 +164,7 @@ st.markdown(
         <li>Ask questions about Bible verses, chapters, or themes and get detailed explanations based on scripture ✨.</li>
         <li>Explore the context, meaning, and applications of various passages 🔍.</li>
         <li>Engage with insights from Bible Project transcripts to deepen your understanding 📖.</li>
+        <li>Ask questions specific to your own life experiences to know what the Bible says about those issues 🙏.</li>
     </ul>
     <p>
         You can ask about specific Bible verses or general questions ❓, and Logos will retrieve relevant information from both the Bible and the video transcripts to answer your questions 📚.
@@ -170,7 +172,7 @@ st.markdown(
     <p>
         Start by typing your question in the field below ⬇️, and you’ll be able to see your previous conversation as well 💬.
     </p>
-    </div>
+</div>
 
     """,
     unsafe_allow_html=True
