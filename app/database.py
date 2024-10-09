@@ -10,13 +10,8 @@ import time
 # Initialize Elasticsearch client
 es_client = Elasticsearch("http://localhost:9200")
 
-with open('/root/practice/logos/data/video_data.json', 'r') as f:
-    video_json = json.load(f)
-
-with open('/root/practice/logos/data/kjv.json', 'r') as f:
-    bible_json = json.load(f)
-    
-bible = bible_json["verses"]
+with open('../evaluation/embedding.json', 'r') as f:
+    embedding = json.load(f)
 
 index_settings = {
     "settings": {
@@ -38,23 +33,18 @@ index_settings = {
             "author": { "type": "text" },  # Video-specific field
 
             # Common field for both types of documents
-            "text": { "type": "text" }  # Both Bible verses and video transcripts share this
+            "text": { "type": "text" },  # Both Bible verses and video transcripts share this
+            "text_vector": {"type": "dense_vector", "dims": 768, "index": True, "similarity": "cosine"}
         }
     }
 }
 
-index_name = "final_db"
+index_name = "vector_db"
 
 # Create the index
-es_client.indices.create(index='final_db', ignore=400, body=index_settings)
 
-documents = bible + video_json
+es_client.indices.delete(index=index_name, ignore_unavailable=True)
+es_client.indices.create(index=index_name, body=index_settings)
 
-for doc in tqdm(documents):
-    # Ensure each document has the expected structure for indexing
-    if 'book_name' in doc:  # It's a Bible verse
-        # Prepare for indexing
-        es_client.index(index=index_name, document=doc)
-    elif 'video_id' in doc:  # It's a YouTube transcript
-        # Prepare for indexing
-        es_client.index(index=index_name, document=doc)
+for doc in tqdm(embedding):
+    es_client.index(index=index_name, document=doc)

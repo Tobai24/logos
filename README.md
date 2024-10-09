@@ -2,6 +2,10 @@
 
 Hey there! 👋 Welcome to **Logos**, your go-to AI-powered Bible study assistant. Whether you're diving into scripture for the first time or looking for deeper insights, Logos has your back. This tool brings together the power of AI and **The Bible Project** YouTube channel to give you rich, scripture-based responses to any question you have. It's all about helping you explore the Bible with context, meaning, and purpose. ✨
 
+<div style="text-align: center;">
+    <img src="image/logos.png" alt="Logo" width="800" height="600"/>
+</div>
+
 ## 📝 **Problem Description**
 
 📖 To really understand scripture and discover its deeper meanings, it's important to have the guidance of the Holy Spirit. Sometimes, we might misinterpret verses or overlook their context, and that can slow down our spiritual growth and make it tougher to apply biblical teachings in our daily lives.
@@ -138,6 +142,8 @@ Ready to dive into your project? Here’s a quick guide to get you started. Each
 
 - **Tools Used**: MiniSearch, Elasticsearch, LangChain, LLM for Question Generation
 - **Where to Find It**: Explore the [Evaluation](evaluation) folder in your project directory. The README in this directory details the process of evaluating the RAG (Retrieval-Augmented Generation) system. The evaluation involved using hit rate and MMR (Mean Reciprocal Rank) to measure performance, comparing keyword search, vector search, and hybrid search (keyword + semantic using LangChain). It also includes a method where an LLM generated questions based on the dataset to assess which retrieval system—MiniSearch or Elasticsearch—performs best for the app.
+
+> For more details about the evalation metrics check the READme in the evaluation folder
 
 ### 📁 **Deployment**
 

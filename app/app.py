@@ -8,7 +8,7 @@ from elasticsearch import Elasticsearch
 es_client = Elasticsearch("http://localhost:9200")
 
 # Define your functions
-def elastic_search(query, index_name="final_db"):
+def elastic_search(query, index_name="vector_db"):
     search_query = {
         "size": 5,
         "query": {
