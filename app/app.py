@@ -53,35 +53,19 @@ def build_prompt(query, search_results):
                 f"**Transcript:** {doc['text']}\n"
             )
     
+    
     prompt = f"""
     You are a knowledgeable Bible study assistant called "Logos". 
     Your primary function is to provide accurate, insightful responses to users' questions about the Bible and related teachings.
-    Answer the QUESTION based on the CONTEXT provided. However, if the CONTEXT doesn't contain the answer, feel free to use your general knowledge of the Bible. 
-    If a specific Bible verse is requested but is not available in the CONTEXT, use the information you have from other sources. In this case, please inform the user that you're using your own data, not the context.
-
-    Your tasks include:
-
-    1. Answering Questions: When a user asks a question related to the Bible or its teachings, respond with a clear and concise answer rooted in scripture. Use the context or your general knowledge, and provide Bible verses when appropriate. If you use your own knowledge, indicate that it is outside the given context.
-
-    2. Contextual Understanding: For any chapter or verse referenced, explain its significance in the context of the broader narrative of the Bible. This includes historical, cultural, and theological insights, as well as perspectives offered in relevant videos.
-
-    3. Spiritual Guidance: Offer practical applications of the scriptures and teachings to help users navigate life situations. This could include advice based on biblical principles or encouragement through scripture.
-
-    4. Clarity and Compassion: Ensure that your responses are respectful, compassionate, and non-judgmental. Aim to foster a learning environment that encourages curiosity and spiritual growth.
-
-    5. Interactive Engagement: Encourage users to ask follow-up questions or seek clarification on topics they find challenging. Be patient and supportive in guiding them through their inquiries.
-
-    ---
+    Answer the QUESTION based on the CONTEXT provided. If necessary, use general Bible knowledge. 
+    If you use external information, kindly inform the user.
+    Please give the supporting bible verse for every answer you give.
 
     **QUESTION:** {query}
 
     **CONTEXT:** {context}
-
-    If necessary, you may refer to your general knowledge of the Bible to answer the question fully.
     """.strip()
-
     return prompt
-
 
 # Function to generate a response from the LLM
 client = openai.OpenAI()
@@ -109,8 +93,8 @@ st.markdown(
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     .stApp {
-        background-color: #e8eff1; /* Soft light background */
-        color: #333333; /* Darker text for contrast */
+        background-color:  #E6F0FF; /* Soft light background */
+        color: #002244 ; /* Darker text for contrast */
         font-family: 'Roboto', sans-serif; /* Roboto font */
     }
     .stTextInput, .stTextArea {
@@ -126,11 +110,16 @@ st.markdown(
         border: 1px solid #cccccc; /* Light gray border */
     }
 
-    .stButton {
-        color: black; /* White text on button */
-        height: 50px; /* Button height */
-        border-radius: 9px; /* Rounded corners */
-        transition: background-color 0.3s; /* Smooth color change */
+    .stButton button {
+        color: #F0F0F0;
+        background-color: #336699;
+        border-radius: 9px;
+        font-size: 16px;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+    }
+    .stButton button:hover {
+        background-color: #005599;
     }
 
     .previous-conversation {
@@ -142,15 +131,51 @@ st.markdown(
         max-height: 400px; /* Limit height */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
-    h1, h2, h3, h4 {
-        font-family: 'Roboto', serif; /* Elegant serif font */
+    h1 {
+        font-family: 'Roboto', serif;
+        color: #F0F0F0; 
+        text-align: center; 
+    }
+    .intro-section {
+        padding: 20px;
+        border-radius: 10px;
+        color: #F0F0F0;
+        background-color: #336699;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-st.title("Bible Study Assistant 📘")
+st.markdown(
+    """
+    <div class="intro-section">
+    <h1>Welcome to Logos: Your Bible Study Assistant 📖</h1>
+    <p>
+        Logos is designed to guide you through thoughtful and engaging Bible study. This app contains comprehensive information from the entire Bible 📜 as well as transcripts from all Bible Project videos 🎥, offering rich insights into scripture and biblical teachings.
+    </p>
+    <p>
+        With Logos, you can:
+    </p>
+    <ul>
+        <li>Ask questions about Bible verses, chapters, or themes and get detailed explanations based on scripture ✨.</li>
+        <li>Explore the context, meaning, and applications of various passages 🔍.</li>
+        <li>Engage with insights from Bible Project transcripts to deepen your understanding 📖.</li>
+    </ul>
+    <p>
+        You can ask about specific Bible verses or general questions ❓, and Logos will retrieve relevant information from both the Bible and the video transcripts to answer your questions 📚.
+    </p>
+    <p>
+        Start by typing your question in the field below ⬇️, and you’ll be able to see your previous conversation as well 💬.
+    </p>
+    </div>
+
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Initialize previous conversation storage
 if 'conversation' not in st.session_state:
