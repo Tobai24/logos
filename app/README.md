@@ -48,7 +48,7 @@ This folder contains all the necessary files to run the **Streamlit app** and la
    Now, run the Streamlit app:
 
    ```bash
-   python app.py
+   streamlit run app.py
    ```
 
 5. **Accessing the App:**

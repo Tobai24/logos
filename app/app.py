@@ -1,49 +1,39 @@
 import streamlit as st
-import json
-import openai
-from openai import OpenAI
 from elasticsearch import Elasticsearch
+from sentence_transformers import SentenceTransformer
+import openai
 
-# Initialize Elasticsearch client
+# Initialize the Elasticsearch client and the embedding model
 es_client = Elasticsearch("http://localhost:9200")
+model = SentenceTransformer("all-mpnet-base-v2")
 
-# Define your functions
-def elastic_search(query, index_name="vector_db"):
+# Function for semantic search using Elasticsearch
+def semantic_search(es_client, index_name, embedding_vector):
+    # Construct the search query
     search_query = {
-        "size": 5,
-        "query": {
-            "bool": {
-                "should": [
-                    {
-                        "multi_match": {
-                            "query": query,
-                            "fields": ["text^4", "book_name", "chapter", "verse", "book"],
-                            "type": "best_fields"
-                        }
-                    },
-                    {
-                        "multi_match": {
-                            "query": query,
-                            "fields": ["title", "text", "author"],
-                            "type": "best_fields"
-                        }
-                    }
-                ]
-            }
+        "size": 10,  # Limit the number of results
+        "knn": {
+            "field": "text_vector",  # Field containing the dense vector
+            "query_vector": embedding_vector,  # The query vector (embedding)
+            "k": 10,  # Number of nearest neighbors to retrieve
+            "num_candidates": 1000  # Candidate pool size for efficiency
         }
     }
 
     # Execute the search query
     response = es_client.search(index=index_name, body=search_query)
-
-    result_docs = []
     
-    # Collect the results from the hits
-    for hit in response['hits']['hits']:
-        result_docs.append(hit['_source'])
-
+    result_docs = []
+    # Collect and return the results from the hits
+    result_docs = [hit['_source'] for hit in response['hits']['hits']]
     return result_docs
 
+# Function to get the embedding vector of the user's question and perform a semantic search
+def question_vector_knn(question, index_name="vector_db"):
+    embedding_vector = model.encode(question)
+    return semantic_search(es_client, index_name, embedding_vector)
+
+# Function to build the prompt for the LLM
 def build_prompt(query, search_results):
     context = ""
     
@@ -91,8 +81,8 @@ Your tasks include:
 
     return prompt
 
-client = OpenAI()
-
+# Function to generate a response from the LLM
+client = openai.OpenAI()
 def llm(prompt):
     response = client.chat.completions.create(
         model='gpt-4o-mini',
@@ -101,8 +91,9 @@ def llm(prompt):
     
     return response.choices[0].message.content
 
+# RAG process: combining retrieval and generation
 def rag(query):
-    search_result = elastic_search(query)
+    search_result = question_vector_knn(query)
     prompt = build_prompt(query, search_result)
     answer = llm(prompt)
     return answer
@@ -196,7 +187,3 @@ if st.button("Submit") or (user_input and st.session_state.get('last_query') != 
         # Clear the input after submission
         st.session_state.user_input = ""  # Clear input in session state
         st.session_state.last_query = user_input  # Store the last query to check against new input
-
-
-
-
