@@ -82,7 +82,7 @@ cd logos
    pip install -r requirements.txt
    ```
 
-## How to Obtain API Keys
+### How to Obtain API Keys
 
 - **OpenAI API Key**:
 
@@ -90,7 +90,7 @@ cd logos
   2.  Navigate to the API section and generate a new API key.
   3.  Copy the key for later use.
 
-## Save the API Key to Make It Private
+### Save the API Key to Make It Private
 
 1. **Create a `.envrc` File:**  
    Create a `.envrc` file in your project directory.
@@ -120,41 +120,38 @@ cd logos
 4. **Best Practices:**  
    For OpenAI, it's recommended to create a new project and use a separate API key for security.
 
-## Running the App Locally
+## Get Going
 
-1. **Run the app**:
+Ready to dive into your project? Here’s a quick guide to get you started. Each step is broken down into folders, so you’ll find all the info you need right where you need it.
 
-   ```bash
-   streamlit run app.py
-   ```
+### 📁 **Data**
 
-2. Open your browser at `http://localhost:8501` to start interacting with **Logos**.
+- **Tools Used**: YouTube Data API
+- **Where to Find It**: Check out the [Data](data) folder in your project directory. The README in this directory will walk you through how to get the data used for this project.
 
-## How to Use
+### 📁 **Notebooks**
 
-### On Telegram
+- **Tools Used**: MiniSearch, Elasticsearch
+- **Where to Find It**: Check out the [Notebook](notebooks) folder in your project directory. The README in this directory provides details on the practice implementations of the retrieval systems used in the app, including MiniSearch (for lightweight, in-memory search) and Elasticsearch (for more scalable, distributed search).
 
-1. Open Telegram and search for **Logos Bible Bot**.
-2. Start a conversation, ask any Bible-related question, and get an answer with relevant scripture and insights from **The Bible Project**.
+### 📁 **Evaluation**
 
-### On the Web
+- **Tools Used**: MiniSearch, Elasticsearch, LangChain, LLM for Question Generation
+- **Where to Find It**: Explore the [Evaluation](evaluation) folder in your project directory. The README in this directory details the process of evaluating the RAG (Retrieval-Augmented Generation) system. The evaluation involved using hit rate and MMR (Mean Reciprocal Rank) to measure performance, comparing keyword search, vector search, and hybrid search (keyword + semantic using LangChain). It also includes a method where an LLM generated questions based on the dataset to assess which retrieval system—MiniSearch or Elasticsearch—performs best for the app.
 
-1. Once the Streamlit app is running, enter your question in the text box.
-2. **Logos** will retrieve relevant Bible verses and insights to answer your question.
+### 📁 **Deployment**
 
-## Project Structure
+### **Local Deployment**
 
-```
-logos-bible-assistant/
-│
-├── app.py                 # Streamlit web app
-├── core/
-│   ├── retrieval.py        # Logic for retrieving Bible verses and video transcripts
-│   └── processing.py       # Text processing and context generation
-├── requirements.txt        # Project dependencies
-├── .env                    # Environment variables (API keys)
-└── README.md               # Project documentation
-```
+- **Tools Used**: streamlit for building the UI and telegram bot.
+- **Where to Find It**: Head over to the [App](app) folder. This README covers everything you need to get your app running locally. It’s got the details for running, so you can test things out on your own machine.
+
+### 📁 **Monitoring**
+
+- **Tools Used**: Grafana for creating dashboards with **PostgreSQL** as the backend database.
+- **Where to Find It**: You’ll find this info in the [monitoring](monitoring) folder. This README will show you how to set up Grafana to keep an eye on your app’s performance and metrics.
+
+Feel free to explore these folders and read through the instructions. Each README is packed with the details you need to get everything up and running smoothly. Enjoy setting up your project! 🚀
 
 ## 🤝 Contributing
 
@@ -183,7 +180,7 @@ logos-bible-assistant/
    ```
 7. **Open a Pull Request**: Navigate to the original repository and click on "Pull Requests." Click the "New Pull Request" button, select your branch, and follow the instructions to create a pull request.
 
-For more detailed instructions on contributing, please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+For more detailed instructions on contributing, please refer to the [CONTRIBUTING.md](contributing.md) file.
 
 Thank you for your interest in contributing to **Logos**! Your contributions help improve the project for everyone. 🙏
 
